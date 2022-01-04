@@ -200,11 +200,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20015557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -6}
+  m_LocalPosition: {x: 1.49, y: 3, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1691708169}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &375005309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 375005310}
+  m_Layer: 0
+  m_Name: Missile Spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &375005310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375005309}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.72, z: 1.236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1691708169}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &784411003
 PrefabInstance:
@@ -267,6 +297,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814f4326a50812947b2469896d89a215, type: 3}
+--- !u!1 &843035458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843035460}
+  - component: {fileID: 843035459}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &843035459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843035458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261a6d0a45bdc9e47b78424888f0c52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalsGroups:
+  - {fileID: 8816817113096419882, guid: d152bf0911f6c2143bd2f7996f8f2e8f, type: 3}
+  - {fileID: 6652951814480207906, guid: 8bdc19cde9b47264d81c78bd52110be7, type: 3}
+  - {fileID: 8485568384927015237, guid: 1408ff5e87fdaad47b416d54d9e2d554, type: 3}
+  - {fileID: 1099716352107047771, guid: 3a4891c10b061c341a1d5cf38af1d8a1, type: 3}
+  - {fileID: 1432514598712888096, guid: 3abf26ba04b86664491a11e8210d90b4, type: 3}
+  - {fileID: 9006639284219750918, guid: 1f0863a95051fbb4fbf043685879ea2b, type: 3}
+  - {fileID: 8212169829838813833, guid: 7ae0e45515ae85d45b51dc32fbf19831, type: 3}
+  - {fileID: 3918158318524684643, guid: ec3d6d496583e814aa94b86994275b23, type: 3}
+  animalMaxInMaps: 100
+  posXMin: 93
+  posXMax: 845
+  posYMin: 0.5
+  posYMax: 1
+  posZMin: 125
+  posZMax: 807
+--- !u!4 &843035460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843035458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858238865
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236e2c01078c1fe4b8cc6d23d869b28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missileSpawnPoint: {fileID: 375005309}
+  missilePrefab: {fileID: 161414970093003982, guid: c203064a84033b647b2486255130fb0c, type: 3}
 --- !u!65 &1691708171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -499,5 +590,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0

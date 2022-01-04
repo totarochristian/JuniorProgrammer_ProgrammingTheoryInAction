@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private float forceJump = 10f;
     private bool isRunning;
     private bool isGrounded = true;
+
+    [SerializeField] private GameObject missileSpawnPoint;
+    [SerializeField] private GameObject missilePrefab;
 
     private Animator playerAnim;
     private Rigidbody playerRb;
@@ -24,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
         TransitionWalkRun();
         TransitionJumping();
+        SpawnMissile();
+        ExitGame();
     }
     void FixedUpdate()
     {
@@ -75,6 +81,21 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Terrain")) {
             isGrounded = true;
             playerAnim.SetBool("Jump_a", false);
+        }
+    }
+    private void ExitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MainManager.instance.SaveData();//Save data
+            SceneManager.LoadScene(0);//Return to menu
+        }
+    }
+    private void SpawnMissile()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(missilePrefab, missileSpawnPoint.transform.position, missileSpawnPoint.transform.rotation);
         }
     }
 }
