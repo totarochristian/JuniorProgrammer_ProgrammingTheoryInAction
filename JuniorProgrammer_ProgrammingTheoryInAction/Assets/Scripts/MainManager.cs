@@ -20,6 +20,7 @@ public class MainManager : MonoBehaviour
         pathFile = Application.persistentDataPath + "/PlayerData.json";
         LoadData();
     }
+    public PlayerData GetPlayerData() { return data; }
     public void LoadData()
     {
         if (File.Exists(pathFile))
@@ -34,6 +35,7 @@ public class MainManager : MonoBehaviour
             data = new PlayerData();
         }
     }
+    // ABSTRACTION
     public void SaveData()
     {
         if (username != "")

@@ -38,16 +38,28 @@ public class PlayerData
         chicks = p.chicks;
         cows = p.cows;
     }
+    // ENCAPSULATION
     public string GetUsername() { return username; }
+    // ENCAPSULATION
     public int GetHorses() { return horses; }
+    // ENCAPSULATION
     public int GetChickens() { return chickens; }
+    // ENCAPSULATION
     public int GetRoosters() { return roosters; }
+    // ENCAPSULATION
     public int GetChicks() { return chicks; }
+    // ENCAPSULATION
     public int GetCows() { return cows; }
+    // ENCAPSULATION
     public void SetUsername(string var) { username = var; }
+    // ENCAPSULATION
     public void SetHorses(int var) { horses = var; }
+    // ENCAPSULATION
     public void SetChickens(int var) { chickens = var; }
+    // ENCAPSULATION
     public void SetRoosters(int var) { roosters = var; }
+    // ENCAPSULATION
     public void SetChicks(int var) { chicks = var; }
+    // ENCAPSULATION
     public void SetCows(int var) { cows = var; }
 }
