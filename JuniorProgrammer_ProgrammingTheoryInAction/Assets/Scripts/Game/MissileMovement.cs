@@ -37,6 +37,7 @@ public class MissileMovement : MonoBehaviour
                 pd.SetChickens(pd.GetChickens() + 1);
             else if (name.Contains("Chick"))
                 pd.SetChicks(pd.GetChicks() + 1);
+            GameObject.Find("Animals Points").GetComponent<AnimalsPoints>().UpdatePoints();
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

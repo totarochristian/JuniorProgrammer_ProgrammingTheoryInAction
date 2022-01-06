@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    private int life;
-    [SerializeField] private int lifeMax = 10;
-    [SerializeField] private float speed = 4f;
-    [SerializeField] private float movementRateMax = 2f;
-    [SerializeField] private float eatTimeMax = 4f;
+    protected int life;
+    [SerializeField] protected int lifeMax = 10;
+    [SerializeField] protected float speed = 4f;
+    [SerializeField] protected float movementRateMax = 2f;
+    [SerializeField] protected float eatTimeMax = 4f;
 
-    private bool move = false;
-    private Vector3 direction;
+    protected bool move = false;
+    protected Vector3 direction;
 
-    private Animator animalAnim;
+    protected Animator animalAnim;
     void Start()
     {
         animalAnim = GetComponent<Animator>();
@@ -34,7 +34,7 @@ public class Animal : MonoBehaviour
     {
         life -= power;
     }
-    IEnumerator RandomMovement()
+    protected IEnumerator RandomMovement()
     {
         while (life > 0)
         {
@@ -47,6 +47,7 @@ public class Animal : MonoBehaviour
             move = false;
         }
     }
+    // ABSTRACTION
     public Vector3 RandomDirection()
     {
         Vector3[] dir = new Vector3[] { Vector3.forward, Vector3.back, Vector3.left, Vector3.right };

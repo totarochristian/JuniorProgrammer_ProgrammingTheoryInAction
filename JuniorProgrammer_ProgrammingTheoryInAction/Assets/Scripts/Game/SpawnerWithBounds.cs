@@ -18,8 +18,14 @@ public class SpawnerWithBounds : MonoBehaviour
     }
     IEnumerator GroupsSpawnIterator()
     {
-        yield return new WaitForSeconds(1);//Wait 1 sec
-        SpawnGroup();
+        while (true)
+        {
+            yield return new WaitForSeconds(1);//Wait 1 sec
+            if (GameObject.FindGameObjectsWithTag("Animal").Length < animalMaxInMaps / 2)
+            {
+                SpawnGroup();
+            }
+        }
     }
     protected int GenerateRandomGroupsIndex()
     {

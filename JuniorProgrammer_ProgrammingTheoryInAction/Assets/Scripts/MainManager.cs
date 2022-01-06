@@ -35,6 +35,7 @@ public class MainManager : MonoBehaviour
             data = new PlayerData();
         }
     }
+    // ABSTRACTION
     public void SaveData()
     {
         if (username != "")

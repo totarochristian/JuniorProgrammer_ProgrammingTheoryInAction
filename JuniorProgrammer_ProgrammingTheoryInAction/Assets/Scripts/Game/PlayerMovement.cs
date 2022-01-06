@@ -20,9 +20,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.Find("Animals Points").GetComponent<AnimalsPoints>().UpdatePoints();//Update the points text
+
         playerRb = GetComponent<Rigidbody>();//Get the rigid body
         playerAnim = GetComponent<Animator>();//Get the animator component
-        playerAnim.SetBool("Static_b", false);
+        playerAnim.SetBool("Static_b", false);       
     }
     void LateUpdate()
     {
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
     }
+    // ABSTRACTION
     private void Move()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
